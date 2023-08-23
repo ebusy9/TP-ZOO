@@ -1,0 +1,8 @@
+Zoo : size, day, paddock
+Paddock : size, location, type, cleanness
+Entity : HP, gender, age, size, weight, type, subtype, illness, hunger, poop, thirst, pee, paddock, maturity age, maximal age, compatible with, diet, favorite food
+Volatile Extends Entity : wingspan
+Terrestrial Extends Entity : height, lenght
+Semi-aquatic Extends Entity : height, lenght
+Aquatic Extends Entity : height, lenght
+User : cash, gender, name, age

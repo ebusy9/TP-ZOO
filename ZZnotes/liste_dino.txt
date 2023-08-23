@@ -1,0 +1,129 @@
+**Animaux Préhistoriques Terrestres :**
+1. Tyrannosaurus rex
+   - Taille : Environ 5,6 m de hauteur, 12,3 m de longueur
+   - Poids : Environ 9 000 kg
+   - Régime alimentaire : Carnivore
+
+2. Triceratops
+   - Taille : Environ 3 m de hauteur, 9 m de longueur
+   - Poids : Environ 5 400 kg
+   - Régime alimentaire : Herbivore
+
+3. Velociraptor
+   - Taille : Environ 0,5 m de hauteur, 1,8 m de longueur
+   - Poids : Environ 15 kg
+   - Régime alimentaire : Carnivore
+
+4. Stegosaurus
+   - Taille : Environ 4 m de hauteur, 9 m de longueur
+   - Poids : Environ 11 000 kg
+   - Régime alimentaire : Herbivore
+
+5. Brachiosaurus
+   - Taille : Environ 13,5 m de hauteur, 25 m de longueur
+   - Poids : Environ 50 000 kg
+   - Régime alimentaire : Herbivore
+
+6. Allosaurus
+   - Taille : Environ 3,5 m de hauteur, 12 m de longueur
+   - Poids : Environ 2 300 kg
+   - Régime alimentaire : Carnivore
+
+
+
+**Animaux Préhistoriques Semi-Aquatiques :**
+1. Spinosaurus
+   - Taille : Environ 5,8 m de hauteur, 16 à 18 m de longueur
+   - Poids : Environ 7 000 kg
+   - Régime alimentaire : Carnivore
+
+2. Suchomimus
+   - Taille : Environ 2,5 m de hauteur, 11 à 12 m de longueur
+   - Poids : Environ 3 400 kg
+   - Régime alimentaire : Carnivore
+
+3. Baryonyx
+   - Taille : Environ 2,5 m de hauteur, 7,5 à 9,5 m de longueur
+   - Poids : Environ 1 700 kg
+   - Régime alimentaire : Carnivore
+
+4. Irritator
+   - Taille : Environ 2 m de hauteur, 7 m de longueur
+   - Poids : Environ 1 000 kg
+   - Régime alimentaire : Carnivore
+
+5. Suchosaurus
+   - Taille : Environ 2 m de hauteur, 9 m de longueur
+   - Poids : Environ 1 500 kg
+   - Régime alimentaire : Carnivore
+
+6. Sarcosuchus
+   - Taille : Environ 2 m de hauteur, 11 à 12 m de longueur
+   - Poids : Environ 8 000 kg
+   - Régime alimentaire : Carnivore
+
+
+
+**Animaux Préhistoriques Aquatiques :**
+1. Ichthyosaurus
+   - Taille : Environ 1,5 m de hauteur, 2 à 4 m de longueur
+   - Poids : Environ 200 à 250 kg
+   - Régime alimentaire : Carnivore
+
+2. Plesiosaurus
+   - Taille : Environ 2,5 m de hauteur, 4 à 8 m de longueur
+   - Poids : Environ 450 à 700 kg
+   - Régime alimentaire : Carnivore
+
+3. Mosasaurus
+   - Taille : Environ 6 m de hauteur, 15 à 18 m de longueur
+   - Poids : Environ 15 000 kg
+   - Régime alimentaire : Carnivore
+
+4. Liopleurodon
+   - Taille : Environ 3 à 4 m de hauteur, 6 à 7 m de longueur
+   - Poids : Environ 2 000 à 3 000 kg
+   - Régime alimentaire : Carnivore
+
+5. Elasmosaurus
+   - Taille : Environ 3,5 m de hauteur, 10 à 12 m de longueur
+   - Poids : Environ 2 000 kg
+   - Régime alimentaire : Carnivore
+
+6. Kronosaurus
+   - Taille : Environ 3 à 4 m de hauteur, 9 à 10 m de longueur
+   - Poids : Environ 8 000 kg
+   - Régime alimentaire : Carnivore
+
+
+
+**Animaux Préhistoriques Volants :**
+1. Pteranodon
+   - Envergure : Environ 7 à 9 m
+   - Poids : Environ 20 à 25 kg
+   - Régime alimentaire : Piscivore (mangeur de poissons)
+
+2. Quetzalcoatlus
+   - Envergure : Environ 10 à 11 m
+   - Poids : Environ 200 à 250 kg
+   - Régime alimentaire : Omnivore
+
+3. Archaeopteryx
+   - Envergure : Environ 0,5 m
+   - Poids : Environ 0,5 kg
+   - Régime alimentaire : Omnivore
+
+4. Rhamphorhynchus
+   - Envergure : Environ 1,2 à 1,5 m
+   - Poids : Environ 0,3 à 0,5 kg
+   - Régime alimentaire : Piscivore
+
+5. Dimorphodon
+   - Envergure : Environ 1,4 à 1,8 m
+   - Poids : Environ 0,5 à 1 kg
+   - Régime alimentaire : Piscivore
+
+6. Pterodaustro
+   - Envergure : Environ 2 m
+   - Poids : Environ 10 à 15 kg
+   - Régime alimentaire : Filtrateur (filtre les organismes microscopiques de l'eau)
