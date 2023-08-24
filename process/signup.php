@@ -97,7 +97,7 @@ function signup($login, $password, $username, $date)
 
         $_SESSION['idUser'] = $fetchGetIdForLogIn['id'];
         $_SESSION['username'] = $fetchGetIdForLogIn['username'];
-        header("Location: ../public/play.php");
+        header("Location: ../public/home.php");
         exit();
     } else {
         if (!empty($fetchedLogin)) {

@@ -1,6 +1,7 @@
 <?php
 
-class Pteranodon extends Volatile {
+class Pteranodon extends Volatile
+{
     private array $compatibleWith = ['Quetzalcoatlus', 'Rhamphorhynchus'];
     private string $subtype = 'Pteranodon';
     private int $size = 2;

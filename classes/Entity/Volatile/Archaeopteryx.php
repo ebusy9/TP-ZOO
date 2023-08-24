@@ -1,6 +1,7 @@
 <?php
 
-class Archaeopteryx extends Volatile {
+class Archaeopteryx extends Volatile
+{
     private array $compatibleWith = [];
     private string $subtype = 'Archaeopteryx';
     private int $size = 1;

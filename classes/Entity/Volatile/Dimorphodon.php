@@ -1,6 +1,7 @@
 <?php
 
-class Dimorphodon extends Volatile {
+class Dimorphodon extends Volatile
+{
     private array $compatibleWith = ['Quetzalcoatlus', 'Rhamphorhynchus'];
     private string $subtype = 'Dimorphodon';
     private int $size = 1;

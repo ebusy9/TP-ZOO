@@ -1,12 +1,12 @@
 <?php
 session_start();
 if (isset($_SESSION['idUser'])) {
-    header('Location: public/play.php?info=userLoggedIn');
+    header('Location: public/home.php?info=userLoggedIn');
     exit();
 } else if (isset($_COOKIE['stayLoggedIn'])) {
     $_SESSION['idUser'] = (int)$_COOKIE['id'];
     $_SESSION['username'] = $_COOKIE['username'];
-    header('Location: public/play.php?info=userAutoLoggedIn');
+    header('Location: public/home.php?info=userAutoLoggedIn');
     exit();
 }
 ?>

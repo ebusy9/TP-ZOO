@@ -1,6 +1,7 @@
 <?php
 
-class Pterodaustro extends Volatile {
+class Pterodaustro extends Volatile
+{
     private array $compatibleWith = [];
     private string $subtype = 'Pterodaustro';
     private int $size = 2;

@@ -12,7 +12,7 @@ if (isset($_POST['rememberMe']) && !isset($_COOKIE['login'])) {
 }
 
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db.php';
 
 
 $login = htmlspecialchars(strtolower($_POST['login']));
@@ -48,7 +48,7 @@ function login(array $fetch, string $password)
             setcookie('id', false, -1, '/');
             setcookie('username', false, -1, '/');
         }
-        header('Location: ../public/play.php?info=loginSuccess');
+        header('Location: ../public/home.php?info=loginSuccess');
         exit();
     } elseif (password_verify($password, $fetch['password'])) {
         header('Location: ../index.php?err=ipAdressDoesNotMatch');

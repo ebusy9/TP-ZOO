@@ -1,6 +1,7 @@
 <?php
 
-class Stegosaurus extends Terrestrial {
+class Stegosaurus extends Terrestrial
+{
     private array $compatibleWith = ['TyrannosaurusRex', 'Allosaurus'];
     private string $subtype = 'Stegosaurus';
     private int $size = 2;

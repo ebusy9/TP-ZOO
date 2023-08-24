@@ -1,6 +1,7 @@
 <?php
 
-class Triceratops extends Terrestrial {
+class Triceratops extends Terrestrial
+{
     private array $compatibleWith = ['Ankylosaurus', 'Hadrosaurus'];
     private string $subtype = 'Triceratops';
     private int $size = 2;
