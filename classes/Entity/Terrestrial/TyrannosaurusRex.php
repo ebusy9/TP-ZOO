@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity\Terrestrial;
+
+use classes\Entity\Terrestrial;
+
 class TyrannosaurusRex extends Terrestrial
 {
     private array $compatibleWith = ['Stegosaurus', 'Triceratops'];

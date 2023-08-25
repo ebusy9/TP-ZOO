@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity\Terrestrial;
+
+use classes\Entity\Terrestrial;
+
 class Velociraptor extends Terrestrial
 {
     private array $compatibleWith = ['Protoceratops'];

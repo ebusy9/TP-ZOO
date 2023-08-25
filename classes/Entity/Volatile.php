@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity;
+
+use classes\Entity;
+
 abstract class Volatile extends Entity
 {
     private int $wingspan;
@@ -10,7 +14,7 @@ abstract class Volatile extends Entity
         return $this->wingspan;
     }
 
-    public function setWingspan($wingspan): void
+    public function setWingspan(int $wingspan): void
     {
         $this->wingspan = $wingspan;
     }

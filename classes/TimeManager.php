@@ -1,6 +1,8 @@
 <?php
 
-class timeManager
+namespace classes;
+
+class TimeManager
 {
     public function __construct(
         private \PDO $db,
@@ -22,6 +24,12 @@ class timeManager
             $_SESSION['ERROR_plusOneHour_entities'] = $th;
         }
 
+        foreach ($entities as $key => $value) {
+            echo 'key ' . $key;
+            echo 'value ' . $value;
+        }
+
+
         try {
             $prepPaddocks = $this->db->prepare('SELECT * FROM paddocks WHERE zoo_id = :zoo_id ');
             $prepPaddocks->execute([
@@ -35,6 +43,5 @@ class timeManager
 
     public function nextDay()
     {
-        
     }
 }

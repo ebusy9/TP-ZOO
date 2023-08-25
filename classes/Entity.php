@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 abstract class Entity
 {
     private int $id;
@@ -12,9 +14,9 @@ abstract class Entity
     private string $type;
     private string $subtype;
     private bool $illness;
-    private int $hunger;
+    private int $food;
     private int $poop;
-    private int $thirst;
+    private int $water;
     private int $pee;
     private int $paddock;
     private int $maturityAge;
@@ -158,15 +160,15 @@ abstract class Entity
     }
 
 
-    public function getHunger(): int
+    public function getFood(): int
     {
-        return $this->hunger;
+        return $this->food;
     }
 
 
-    public function setHunger(int $hunger): void
+    public function setFood(int $food): void
     {
-        $this->hunger = $hunger;
+        $this->food = $food;
     }
 
 
@@ -182,15 +184,15 @@ abstract class Entity
     }
 
 
-    public function getThirst(): int
+    public function getWater(): int
     {
-        return $this->thirst;
+        return $this->water;
     }
 
 
-    public function setThirst(int $thirst): void
+    public function setWater(int $water): void
     {
-        $this->thirst = $thirst;
+        $this->water = $water;
     }
 
 

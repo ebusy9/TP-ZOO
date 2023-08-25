@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity\Aquatic;
+
+use classes\Entity\Aquatic;
+
 class Mosasaurus extends Aquatic {
     private array $compatibleWith = ['Kronosaurus', 'Liopleurodon'];
     private string $subtype = 'Mosasaurus';

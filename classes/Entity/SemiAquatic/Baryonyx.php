@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity\SemiAquatic;
+
+use classes\Entity\SemiAquatic;
+
 class Baryonyx extends SemiAquatic {
     private array $compatibleWith = ['Suchomimus', 'Irritator'];
     private string $subtype = 'Baryonyx';

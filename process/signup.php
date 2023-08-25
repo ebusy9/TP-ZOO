@@ -48,7 +48,7 @@ function signup($login, $password, $username, $date)
     require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db.php';
 
     try {
-        $queryLogin = $pdoInsta->prepare("SELECT * FROM users WHERE login = :login");
+        $queryLogin = $db->prepare("SELECT * FROM users WHERE login = :login");
         $queryLogin->execute([':login' => $login]);
         $fetchedLogin = $queryLogin->fetchAll();
     } catch (PDOException $exception) {
@@ -58,7 +58,7 @@ function signup($login, $password, $username, $date)
     }
 
     try {
-        $queryUsername = $pdoInsta->prepare("SELECT * FROM users WHERE username = :username");
+        $queryUsername = $db->prepare("SELECT * FROM users WHERE username = :username");
         $queryUsername->execute([':username' => $username]);
         $fetchedUsername = $queryUsername->fetchAll();
     } catch (PDOException $exception) {
@@ -71,7 +71,7 @@ function signup($login, $password, $username, $date)
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
         try {
-            $prepareSignup = $pdoInsta->prepare("INSERT INTO users (username, login, password, register_date) VALUES (:username, :login, :password, :register_date)");
+            $prepareSignup = $db->prepare("INSERT INTO users (username, login, password, register_date) VALUES (:username, :login, :password, :register_date)");
             $prepareSignup->execute([
                 ':username' => $username,
                 ':login' => $login,
@@ -86,7 +86,7 @@ function signup($login, $password, $username, $date)
         }
 
         try {
-            $pdoGetIdForLogIn = $pdoInsta->prepare("SELECT * FROM users WHERE login = :login");
+            $pdoGetIdForLogIn = $db->prepare("SELECT * FROM users WHERE login = :login");
             $pdoGetIdForLogIn->execute([':login' => $login]);
             $fetchGetIdForLogIn = $pdoGetIdForLogIn->fetch();
         } catch (PDOException $exception) {

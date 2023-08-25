@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 class Paddock
 {
     private int $id;

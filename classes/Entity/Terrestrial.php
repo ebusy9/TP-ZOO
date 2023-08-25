@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity;
+
+use classes\Entity;
+
 abstract class Terrestrial extends Entity
 {
     private int $height;
@@ -11,7 +15,7 @@ abstract class Terrestrial extends Entity
         return $this->height;
     }
 
-    public function setHeight($height): void
+    public function setHeight(int $height): void
     {
         $this->height = $height;
     }
@@ -21,7 +25,7 @@ abstract class Terrestrial extends Entity
         return $this->length;
     }
 
-    public function setLength($length): void
+    public function setLength(int $length): void
     {
         $this->length = $length;
     }

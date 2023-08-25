@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 class Zoo
 {
     private int $id;

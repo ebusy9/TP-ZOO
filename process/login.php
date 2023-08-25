@@ -19,7 +19,7 @@ $login = htmlspecialchars(strtolower($_POST['login']));
 
 
 try {
-    $queryUsers = $pdoInsta->prepare("SELECT * FROM users WHERE users.login = :login");
+    $queryUsers = $db->prepare("SELECT * FROM users WHERE users.login = :login");
     $queryUsers->execute([':login' => $login]);
     $fetchedUser = $queryUsers->fetchAll();
 } catch (PDOException $exception) {

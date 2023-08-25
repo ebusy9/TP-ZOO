@@ -1,5 +1,7 @@
 <?php
 
+namespace classes;
+
 class Zookeeper
 {
     private string $name;

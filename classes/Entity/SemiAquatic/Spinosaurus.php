@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity\SemiAquatic;
+
+use classes\Entity\SemiAquatic;
+
 class Spinosaurus extends SemiAquatic {
     private array $compatibleWith = ['Plesiosaurus', 'Liopleurodon'];
     private string $subtype = 'Spinosaurus';
