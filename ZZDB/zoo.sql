@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Aug 24, 2023 at 09:40 AM
+-- Generation Time: Aug 25, 2023 at 10:13 AM
 -- Server version: 10.6.12-MariaDB-1:10.6.12+maria~ubu2004-log
 -- PHP Version: 8.2.1
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `zoo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entities`
+--
+
+CREATE TABLE `entities` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `healthPoints` int(11) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL DEFAULT 0,
+  `subtype` varchar(255) NOT NULL,
+  `illness` tinyint(1) NOT NULL DEFAULT 0,
+  `food` int(11) NOT NULL DEFAULT 100,
+  `poop` int(11) NOT NULL DEFAULT 0,
+  `water` int(11) NOT NULL DEFAULT 100,
+  `pee` int(11) NOT NULL DEFAULT 0,
+  `asleep` tinyint(1) NOT NULL DEFAULT 0,
+  `paddock_id` int(11) DEFAULT NULL,
+  `zoo_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `entities`
+--
+
+INSERT INTO `entities` (`id`, `name`, `healthPoints`, `gender`, `age`, `subtype`, `illness`, `food`, `poop`, `water`, `pee`, `asleep`, `paddock_id`, `zoo_id`) VALUES
+(1, 'tet', 33, 'male', 0, 'uranus', 0, 100, 0, 100, 0, 0, NULL, NULL),
+(2, 'tets', 55, 'male', 0, 'uranus', 0, 100, 0, 100, 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -91,6 +122,14 @@ CREATE TABLE `zookeepers` (
 --
 
 --
+-- Indexes for table `entities`
+--
+ALTER TABLE `entities`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `paddock_id` (`paddock_id`),
+  ADD KEY `zoo_id` (`zoo_id`);
+
+--
 -- Indexes for table `paddocks`
 --
 ALTER TABLE `paddocks`
@@ -124,6 +163,12 @@ ALTER TABLE `zookeepers`
 --
 
 --
+-- AUTO_INCREMENT for table `entities`
+--
+ALTER TABLE `entities`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `paddocks`
 --
 ALTER TABLE `paddocks`
@@ -150,6 +195,13 @@ ALTER TABLE `zookeepers`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `entities`
+--
+ALTER TABLE `entities`
+  ADD CONSTRAINT `entities_ibfk_1` FOREIGN KEY (`paddock_id`) REFERENCES `paddocks` (`id`),
+  ADD CONSTRAINT `entities_ibfk_2` FOREIGN KEY (`zoo_id`) REFERENCES `zoo` (`id`);
 
 --
 -- Constraints for table `paddocks`
