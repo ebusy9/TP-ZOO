@@ -6,7 +6,7 @@ require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECT
 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 if (!isset($_SESSION['idUser'])) {
-    header('Location: ../../index.php?redirectFrom=nextDay&info=notLoggedIn');
+    header('Location: ../../index.php?redirectFrom=nextHour&info=notLoggedIn');
     exit();
 }
 

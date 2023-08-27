@@ -4,11 +4,32 @@ namespace classes;
 
 class Zookeeper
 {
-    private string $name;
-    private int $age;
-    private string $gender;
-    private int $cash;
+    private int $id;
+    private int $money;
+    private int $piscivoreFood = 0;
+    private int $filterFeedFood = 0;
+    private int $carnivoreFood = 0;
+    private int $herbivoreFood = 0;
+    private int $water = 0;
+    private int $firstAidKit = 0;
 
+
+    public function __construct(private ?string $name = null, private ?int $age = null, private ?string $gender = null)
+    {
+        $this->name = $name;
+        $this->age = $age;
+        $this->gender = $gender;
+    }
+
+    public function hydrate(array $data): void
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if(method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
 
     public function getName(): string
     {
@@ -20,7 +41,6 @@ class Zookeeper
         $this->name = $name;
     }
 
-
     public function getAge(): int
     {
         return $this->age;
@@ -30,7 +50,6 @@ class Zookeeper
     {
         $this->age = $age;
     }
-
 
     public function getGender(): string
     {
@@ -42,14 +61,83 @@ class Zookeeper
         $this->gender = $gender;
     }
 
-
-    public function getCash(): int
+    public function getMoney(): int
     {
-        return $this->cash;
+        return $this->money;
     }
 
-    public function setCash($cash): void
+    public function setMoney($money): void
     {
-        $this->cash = $cash;
+        $this->money = $money;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getPiscivoreFood(): int
+    {
+        return $this->piscivoreFood;
+    }
+
+    public function setPiscivoreFood($piscivoreFood): void
+    {
+        $this->piscivoreFood = $piscivoreFood;
+    }
+
+    public function getFilterFeedFood(): int
+    {
+        return $this->filterFeedFood;
+    }
+
+    public function setFilterFeedFood($filterFeedFood): void
+    {
+        $this->filterFeedFood = $filterFeedFood;
+    }
+
+    public function getCarnivoreFood(): int
+    {
+        return $this->carnivoreFood;
+    }
+
+    public function setCarnivoreFood($carnivoreFood): void
+    {
+        $this->carnivoreFood = $carnivoreFood;
+    }
+
+    public function getHerbivoreFood(): int
+    {
+        return $this->herbivoreFood;
+    }
+
+    public function setHerbivoreFood($herbivoreFood): void
+    {
+        $this->herbivoreFood = $herbivoreFood;
+    }
+
+    public function getFirstAidKit(): int
+    {
+        return $this->firstAidKit;
+    }
+
+    public function setFirstAidKit($firstAidKit): void
+    {
+        $this->firstAidKit = $firstAidKit;
+    }
+
+    public function getWater(): int
+    {
+        return $this->water;
+    }
+
+    public function setWater($water): void
+    {
+        $this->water = $water;
     }
 }

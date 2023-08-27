@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql
--- Generation Time: Aug 26, 2023 at 07:42 PM
--- Server version: 10.6.12-MariaDB-1:10.6.12+maria~ubu2004-log
--- PHP Version: 8.2.1
+-- Hôte : localhost:3306
+-- Généré le : dim. 27 août 2023 à 12:50
+-- Version du serveur : 8.0.30
+-- Version de PHP : 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,34 +18,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `zoo`
+-- Base de données : `zoo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `entities`
+-- Structure de la table `entities`
 --
 
 CREATE TABLE `entities` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `healthPoints` int(11) NOT NULL,
-  `gender` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL DEFAULT 0,
-  `subtype` varchar(255) NOT NULL,
-  `illness` tinyint(1) NOT NULL DEFAULT 0,
-  `food` int(11) NOT NULL DEFAULT 100,
-  `poop` int(11) NOT NULL DEFAULT 0,
-  `water` int(11) NOT NULL DEFAULT 100,
-  `pee` int(11) NOT NULL DEFAULT 0,
-  `asleep` tinyint(1) NOT NULL DEFAULT 0,
-  `paddock_id` int(11) DEFAULT NULL,
-  `zoo_id` int(11) DEFAULT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `healthPoints` int NOT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `age` int NOT NULL DEFAULT '0',
+  `subtype` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `illness` tinyint(1) NOT NULL DEFAULT '0',
+  `food` int NOT NULL DEFAULT '100',
+  `poop` int NOT NULL DEFAULT '0',
+  `water` int NOT NULL DEFAULT '100',
+  `pee` int NOT NULL DEFAULT '0',
+  `asleep` tinyint(1) NOT NULL DEFAULT '0',
+  `paddock_id` int DEFAULT NULL,
+  `zoo_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `entities`
+-- Déchargement des données de la table `entities`
 --
 
 INSERT INTO `entities` (`id`, `name`, `healthPoints`, `gender`, `age`, `subtype`, `illness`, `food`, `poop`, `water`, `pee`, `asleep`, `paddock_id`, `zoo_id`) VALUES
@@ -55,34 +55,34 @@ INSERT INTO `entities` (`id`, `name`, `healthPoints`, `gender`, `age`, `subtype`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paddocks`
+-- Structure de la table `paddocks`
 --
 
 CREATE TABLE `paddocks` (
-  `id` int(11) NOT NULL,
-  `size` int(11) NOT NULL,
-  `spot` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `cleanliness` int(11) NOT NULL,
-  `zoo_id` int(11) NOT NULL
+  `id` int NOT NULL,
+  `size` int NOT NULL,
+  `spot` int NOT NULL,
+  `type` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `cleanliness` int NOT NULL,
+  `zoo_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `login` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `id` int NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `login` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `register_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `login`, `password`, `register_date`) VALUES
@@ -91,38 +91,52 @@ INSERT INTO `users` (`id`, `username`, `login`, `password`, `register_date`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `zoo`
+-- Structure de la table `zoo`
 --
 
 CREATE TABLE `zoo` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `size` int(11) NOT NULL DEFAULT 2,
-  `currentDay` int(11) NOT NULL DEFAULT 1,
-  `zookeeper_id` int(11) NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `size` int NOT NULL DEFAULT '2',
+  `currentDay` int NOT NULL DEFAULT '1',
+  `zookeeper_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `zookeepers`
+-- Structure de la table `zookeepers`
 --
 
 CREATE TABLE `zookeepers` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
-  `gender` varchar(255) NOT NULL,
-  `money` int(11) DEFAULT 0,
-  `user_id` int(11) NOT NULL
+  `id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `age` int NOT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `money` int DEFAULT '0',
+  `piscivoreFood` int NOT NULL DEFAULT '0',
+  `filterFeedFood` int NOT NULL DEFAULT '0',
+  `carnivoreFood` int NOT NULL DEFAULT '0',
+  `herbivoreFood` int NOT NULL DEFAULT '0',
+  `water` int NOT NULL DEFAULT '0',
+  `firstAidKit` int NOT NULL DEFAULT '0',
+  `user_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Déchargement des données de la table `zookeepers`
+--
+
+INSERT INTO `zookeepers` (`id`, `name`, `age`, `gender`, `money`, `piscivoreFood`, `filterFeedFood`, `carnivoreFood`, `herbivoreFood`, `water`, `firstAidKit`, `user_id`) VALUES
+(12695, 'Bi', 65, 'nonbinary', 500, 0, 0, 0, 0, 0, 0, 1),
+(35176, 'finalTest', 77, 'female', 500, 0, 0, 0, 0, 0, 0, 1);
+
+--
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `entities`
+-- Index pour la table `entities`
 --
 ALTER TABLE `entities`
   ADD PRIMARY KEY (`id`),
@@ -130,14 +144,14 @@ ALTER TABLE `entities`
   ADD KEY `zoo_id` (`zoo_id`);
 
 --
--- Indexes for table `paddocks`
+-- Index pour la table `paddocks`
 --
 ALTER TABLE `paddocks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `zoo_id` (`zoo_id`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -145,78 +159,78 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `login` (`login`);
 
 --
--- Indexes for table `zoo`
+-- Index pour la table `zoo`
 --
 ALTER TABLE `zoo`
   ADD PRIMARY KEY (`id`),
   ADD KEY `zookeeper_id` (`zookeeper_id`);
 
 --
--- Indexes for table `zookeepers`
+-- Index pour la table `zookeepers`
 --
 ALTER TABLE `zookeepers`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `entities`
+-- AUTO_INCREMENT pour la table `entities`
 --
 ALTER TABLE `entities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `paddocks`
+-- AUTO_INCREMENT pour la table `paddocks`
 --
 ALTER TABLE `paddocks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `zoo`
+-- AUTO_INCREMENT pour la table `zoo`
 --
 ALTER TABLE `zoo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `zookeepers`
+-- AUTO_INCREMENT pour la table `zookeepers`
 --
 ALTER TABLE `zookeepers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46679;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `entities`
+-- Contraintes pour la table `entities`
 --
 ALTER TABLE `entities`
   ADD CONSTRAINT `entities_ibfk_1` FOREIGN KEY (`paddock_id`) REFERENCES `paddocks` (`id`),
   ADD CONSTRAINT `entities_ibfk_2` FOREIGN KEY (`zoo_id`) REFERENCES `zoo` (`id`);
 
 --
--- Constraints for table `paddocks`
+-- Contraintes pour la table `paddocks`
 --
 ALTER TABLE `paddocks`
   ADD CONSTRAINT `paddocks_ibfk_1` FOREIGN KEY (`zoo_id`) REFERENCES `zoo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `zoo`
+-- Contraintes pour la table `zoo`
 --
 ALTER TABLE `zoo`
   ADD CONSTRAINT `zoo_ibfk_1` FOREIGN KEY (`zookeeper_id`) REFERENCES `zookeepers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `zookeepers`
+-- Contraintes pour la table `zookeepers`
 --
 ALTER TABLE `zookeepers`
   ADD CONSTRAINT `zookeepers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

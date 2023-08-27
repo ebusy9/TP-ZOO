@@ -1,5 +1,9 @@
 <?php
 
+namespace classes\Entity\Volatile;
+
+use classes\Entity\Volatile;
+
 class Quetzalcoatlus extends Volatile
 {
     private array $compatibleWith = ['Pteranodon', 'Dimorphodon'];
