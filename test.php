@@ -9,14 +9,16 @@ $paddockManager = new PaddockManager($db);
 
 $test = $paddockManager->getAllPaddocksFromDb(63377);
 
-echo '<pre>';
-print_r($test);
-echo '</pre>';
+// echo '<pre>';
+// print_r($test);
+// echo '</pre>';
 
-echo '<pre>';
-echo count($test);
-echo '</pre>';
+// echo '<pre>';
+// echo count($test);
+// echo '</pre>';
 
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_SESSION);
+// echo '</pre>';
+
+echo json_encode($test);

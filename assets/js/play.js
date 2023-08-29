@@ -172,6 +172,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const buySemiAquaticPaddock = document.querySelector("#buySemiAquaticPaddock")
     const buyTerrestrialPaddock = document.querySelector("#buyTerrestrialPaddock")
     const buyVolatilePaddock = document.querySelector("#buyVolatilePaddock")
+    const animalStoreBtn = document.querySelector("#animalStoreBtn")
+    const animalStore = document.querySelector("#animalStore")
+    const paddockSelect = document.querySelector("#paddockSelect")
 
     var currentBalance = parseInt(balance.innerHTML)
     verifyBalanceAndDisableStoreBtns(currentBalance)
@@ -223,12 +226,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
     paddockStoreBtn.addEventListener("click", (event) => {
         consumableStore.hidden = true
         paddockStore.hidden = false
-    } )
+        animalStore.hidden = true
+
+    })
 
     consumableStoreBtn.addEventListener("click", (event) => {
         consumableStore.hidden = false
         paddockStore.hidden = true
-    } )
+        animalStore.hidden = true
+
+    })
+
+    animalStoreBtn.addEventListener("click", (event) => {
+        animalStore.hidden = false
+        consumableStore.hidden = true
+        paddockStore.hidden = true
+    })
 
     buyPiscivoreF.addEventListener("click", (event) => {
         const data = {
@@ -332,17 +345,46 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
 
-    function buildZoo(){
+    function buildZoo() {
         const data = {
             balec: true
         }
         fetchZooBuilder(data)
-        .then((response) => {
-            zooHtml.innerHTML = response
-        })
+            .then((response) => {
+                zooHtml.innerHTML = response
+            })
     }
 
     buildZoo()
 
+
+    async function fetchTest(data) {
+        const response = await fetch("../../test.php", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        return response.json();
+    }
+
+    let paddockSelectOptions = []
+
+    function test() {
+        const data = {
+            balec: true
+        }
+        fetchTest(data)
+            .then((test) => {
+                test.forEach((element) => {
+                paddockSelect.innerHTML += `<option value="${element['id']}">ID: ${element['id']} (${element['type']})</option>`
+                paddockSelectOptions.push(element['id']+" "+element['type'])
+                console.log(paddockSelectOptions)
+            });
+            })
+    }
+
+    test()
 
 })

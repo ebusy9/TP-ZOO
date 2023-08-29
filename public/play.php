@@ -45,6 +45,7 @@ if (isset($_POST['zookeeperId'])) {
             <legend>Store</legend>
             <button id="consumableStoreBtn">Consumable</button>
             <button id="paddockStoreBtn">Paddocks</button>
+            <button id="animalStoreBtn">Animals</button>
             <div id="consumableStore">
                 <p>Piscivore food <button id="buyPiscivoreF">23g</button></p>
                 <p>Filter feed food <button id="buyFilterFeedF">20g</button></p>
@@ -58,6 +59,42 @@ if (isset($_POST['zookeeperId'])) {
                 <p>Semi-aquatic Paddock <button id="buySemiAquaticPaddock">750g</button></p>
                 <p>Terrestrial Paddock <button id="buyTerrestrialPaddock">750g</button></p>
                 <p>Volatile Paddock <button id="buyVolatilePaddock">750g</button></p>
+            </div>
+            <div id="animalStore" hidden>
+            <label for="paddockSelect">Choose a paddock:</label>
+                <select id="paddockSelect"></select>
+                <div id="buyAquatic">
+                <p>Elasmosaurus <button id="buyElasmosaurus">23g</button></p>
+                <p>Ichthyosaurus <button id="buyIchthyosaurus">23g</button></p>
+                <p>Kronosaurus <button id="buyKronosaurus">23g</button></p>
+                <p>Liopleurodon <button id="buyLiopleurodon">23g</button></p>
+                <p>Mosasaurus <button id="buyMosasaurus">23g</button></p>
+                <p>Plesiosaurus <button id="buyPlesiosaurus">23g</button></p>
+                </div>
+                <div id="buySemiAquatic">
+                <p>Baryonyx <button id="buyBaryonyx">23g</button></p>
+                <p>Irritator <button id="buyIrritator">23g</button></p>
+                <p>Sarcosuchus <button id="buySarcosuchus">23g</button></p>
+                <p>Spinosaurus <button id="buySpinosaurus">23g</button></p>
+                <p>Suchomimus <button id="buySuchomimus">23g</button></p>
+                <p>Suchosaurus <button id="buySuchosaurus">23g</button></p>
+                </div>
+                <div id="buyTerrestrial">
+                <p>Allosaurus <button id="buyAllosaurus">23g</button></p>
+                <p>Brachiosaurus <button id="buyBrachiosaurus">23g</button></p>
+                <p>Stegosaurus <button id="buyStegosaurus">23g</button></p>
+                <p>Triceratops <button id="buyTriceratops">23g</button></p>
+                <p>Tyrannosaurus Rex <button id="buyTyrannosaurusRex">23g</button></p>
+                <p>Velociraptor <button id="buyVelociraptor">23g</button></p>
+                </div>
+                <div id="buyVolatile">
+                <p>Archaeopteryx <button id="buyArchaeopteryx">23g</button></p>
+                <p>Dimorphodon <button id="buyDimorphodon">23g</button></p>
+                <p>Pteranodon <button id="buyPteranodon">23g</button></p>
+                <p>Pterodaustro <button id="buyPterodaustro">23g</button></p>
+                <p>Quetzalcoatlus <button id="buyQuetzalcoatlus">23g</button></p>
+                <p>Rhamphorhynchus <button id="buyRhamphorhynchus">23g</button></p>
+                </div>
             </div>
         </fieldset>
     </div>
