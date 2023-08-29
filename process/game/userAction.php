@@ -1,5 +1,7 @@
 <?php
 
+use classes\Paddock;
+use classes\PaddockManager;
 use classes\ZookeeperManager;
 use classes\ZooManager;
 
@@ -15,7 +17,9 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 $zookeeperManager = new ZookeeperManager($db);
 $zooManager = new ZooManager($db);
+$paddockManager = new PaddockManager($db);
 $zookeeper = $zookeeperManager->getZookeeperFromDb($_SESSION['zookeeperId']);
+$zoo = $zooManager->getZooFromDb($_SESSION['zooId']);
 
 
 if (isset($data['get_inventory'])) {
@@ -57,16 +61,16 @@ if (isset($data['item_bought'])) {
 if(isset($data['paddock_bought'])){
     switch ($data['paddock_bought']) {
         case 'AquaticPaddock':
-            $balance = $zookeeperManager->buyPiscivoreFoodAndUpdateDb($zookeeper);
+            $balance = $paddockManager->buyPaddockAndUpdateDb($zookeeper, $zoo, new Paddock('aquatic'), $zookeeperManager);
             break;
         case 'SemiAquaticPaddock':
-            $balance = $zookeeperManager->buyFilterFeedFoodAndUpdateDb($zookeeper);
+            $balance = $paddockManager->buyPaddockAndUpdateDb($zookeeper, $zoo, new Paddock('semiaquatic'), $zookeeperManager);
             break;
         case 'TerrestrialPaddock':
-            $balance = $zookeeperManager->buyHerbivoreFoodAndUpdateDb($zookeeper);
+            $balance = $paddockManager->buyPaddockAndUpdateDb($zookeeper, $zoo, new Paddock('terrestrial'), $zookeeperManager);
             break;
         case 'VolatilePaddock':
-            $balance = $zookeeperManager->buyCarnivoreFoodAndUpdateDb($zookeeper);
+            $balance = $paddockManager->buyPaddockAndUpdateDb($zookeeper, $zoo, new Paddock('volatile'), $zookeeperManager);
             break;
         default:
             $balance = $zookeeper->getMoney();

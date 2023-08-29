@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
 
+    const zooHtml = document.querySelector(".zoo")
     const consumableStoreBtn = document.querySelector("#consumableStoreBtn")
     const paddockStoreBtn = document.querySelector("#paddockStoreBtn")
     const consumableStore = document.querySelector("#consumableStore")
@@ -199,6 +200,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     async function fetchNextDay(data) {
         const response = await fetch("../../process/game/nextDay.php", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
+        return response.json();
+    }
+
+    async function fetchZooBuilder(data) {
+        const response = await fetch("../../process/game/zooBuilder.php", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -318,5 +330,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 verifyBalanceAndDisableStoreBtns(response)
             })
     })
+
+
+    function buildZoo(){
+        const data = {
+            balec: true
+        }
+        fetchZooBuilder(data)
+        .then((response) => {
+            zooHtml.innerHTML = response
+        })
+    }
+
+    buildZoo()
+
 
 })

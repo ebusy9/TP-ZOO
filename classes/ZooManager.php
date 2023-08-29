@@ -16,25 +16,20 @@ class ZooManager
     public function nextHour(?int $zooId = null)
     {
         try {
-            $prepEntities = $this->db->prepare('SELECT * FROM entities WHERE zoo_id = :zoo_id ');
+            $prepEntities = $this->db->prepare('SELECT * FROM entities WHERE zooId = :zooId ');
             $prepEntities->execute([
-                'zoo_id' => $zooId,
+                'zooId' => $zooId,
             ]);
             $entities = $prepEntities->fetchAll();
         } catch (\PDOException $ex) {
             $_SESSION['ERROR_plusOneHour_entities'] = $ex;
         }
 
-        foreach ($entities as $key => $value) {
-            echo 'key ' . $key;
-            echo 'value ' . $value;
-        }
-
 
         try {
-            $prepPaddocks = $this->db->prepare('SELECT * FROM paddocks WHERE zoo_id = :zoo_id ');
+            $prepPaddocks = $this->db->prepare('SELECT * FROM paddocks WHERE zooId = :zooId ');
             $prepPaddocks->execute([
-                'zoo_id' => $zooId,
+                'zooId' => $zooId,
             ]);
             $paddocks = $prepPaddocks->fetchAll();
         } catch (\PDOException $ex) {
@@ -49,16 +44,16 @@ class ZooManager
     public function dbInsertZoo(Zoo $zoo, int $zookeeperId): Zoo
     {
         $id = $this->getRandomIdForNewZoo();
-        $name = htmlspecialchars($zoo->getName());
+        $zooName = htmlspecialchars($zoo->getZooName());
         $size = $this::ZOO_START_SIZE;
         $currentDay = $this::ZOO_START_DAY;
 
 
         try {
-            $insertZoo = $this->db->prepare("INSERT INTO zookeepers (id, name, size, currentDay, zookeeperId) VALUES (:id, :name, :size, :currentDay, :zookeeperId)");
+            $insertZoo = $this->db->prepare("INSERT INTO zoo (id, zooName, size, currentDay, zookeeperId) VALUES (:id, :zooName, :size, :currentDay, :zookeeperId)");
             $insertZoo->execute([
                 ':id' => $id,
-                ':name' => $name,
+                ':zooName' => $zooName,
                 ':size' => $size,
                 ':currentDay' => $currentDay,
                 ':zookeeperId' => $zookeeperId,
@@ -153,4 +148,6 @@ class ZooManager
         $zoo->hydrate($zooFromDb);
         return $zoo;
     }
+
+
 }

@@ -8,7 +8,23 @@ class Paddock
     private int $size;
     private int $spot;
     private string $type;
-    private int $cleanliness;
+    private int $dirtiness;
+
+
+    public function __construct(string $type = null) {
+        $this->type = $type;
+    }
+
+    
+    public function hydrate(array $data): void
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if(method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
 
 
     public function getId(): int
@@ -59,14 +75,14 @@ class Paddock
     }
 
 
-    public function getCleanliness(): int
+    public function getDirtiness(): int
     {
-        return $this->cleanliness;
+        return $this->dirtiness;
     }
 
 
-    public function setCleanliness($cleanliness): void
+    public function setDirtiness($dirtiness): void
     {
-        $this->cleanliness = $cleanliness;
+        $this->dirtiness = $dirtiness;
     }
 }

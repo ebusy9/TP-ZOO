@@ -5,15 +5,14 @@ namespace classes;
 class Zoo
 {
     private int $id;
-    private string $name;
     private int $size;
     private int $currentDay;
     private array $paddocks = [];
 
 
-    public function __construct(?string $name = null)
+    public function __construct(private ?string $zooName = null)
     {
-        $this->name = $name;
+        $this->zooName = $zooName;
     }
 
     public function hydrate(array $data): void
@@ -38,15 +37,15 @@ class Zoo
     }
 
 
-    public function getName(): string
+    public function getZooName(): string
     {
-        return $this->name;
+        return $this->zooName;
     }
 
 
-    public function setName($name): void
+    public function setZooName($zooName): void
     {
-        $this->name = $name;
+        $this->zooName = $zooName;
     }
 
 

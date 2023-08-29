@@ -29,13 +29,13 @@ if (isset($_SESSION['idUser'])) {
             <legend>Log in</legend>
             <div>
                 <label for="login">Login :</label>
-                <input type="text" name="login" required <?php if (isset($_COOKIE['login'])) {
+                <input type="text" name="login" id="login" required <?php if (isset($_COOKIE['login'])) {
                                                                                     echo "value=\"{$_COOKIE['login']}\"";
                                                                                 } ?>>
             </div>
             <div>
                 <label for="password">Password :</label>
-                <input type="password" name="password" required>
+                <input type="password" name="password" id="password" required>
             </div>
             <div>
                 <input type="checkbox" name="rememberMe" checked>Remember me</input>
@@ -52,7 +52,7 @@ if (isset($_SESSION['idUser'])) {
             <legend>Sign up</legend>
             <div>
                 <label for="createUsername">Username :</label>
-                <input type="text" name="createUsername" required>
+                <input type="text" name="createUsername" id="createUsername" required>
                 <ul class="requirementsList" id="usernameRequirements" hidden>
                     <li id="usernameRequirementLenght">Longeur: 2 à 12 caractères</li>
                     <li id="usernameRequirementChars">Caractères autorisés: [A-Z], [a-z], [0-9]</li>
@@ -60,7 +60,7 @@ if (isset($_SESSION['idUser'])) {
             </div>
             <div>
                 <label for="createLogin">Login :</label>
-                <input type="text" name="createLogin" required>
+                <input type="text" name="createLogin" id="createLogin" required>
                 <ul class="requirementsList" id="loginRequirements" hidden>
                     <li id="loginRequirementLenght">Longeur: 6 à 12 caractères</li>
                     <li id="loginRequirementChars">Caractères autorisés: [A-Z], [a-z], [0-9]</li>
@@ -68,7 +68,7 @@ if (isset($_SESSION['idUser'])) {
             </div>
             <div>
                 <label for="createPassword">Password :</label>
-                <input type="password" name="createPassword" required>
+                <input type="password" name="createPassword" id="createPassword" required>
                 <ul class="requirementsList" id="pwdRequirements" hidden>
                     <li id="pwdRequirementLenght">Longeur: 6 à 12 caractères</li>
                     <li id="pwdRequirementLetter">Au moins une lettre</li>
@@ -78,7 +78,7 @@ if (isset($_SESSION['idUser'])) {
             </div>
             <div>
                 <label for="confirmPassword">Confirm password :</label>
-                <input type="password" name="confirmPassword" required>
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
             </div>
         </fieldset>
         <button type="submit">SignUp!</button>
