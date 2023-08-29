@@ -5,7 +5,7 @@ namespace classes;
 class ZookeeperManager
 {
 
-    const START_MONEY = 500;
+    const START_MONEY = 1000;
     const PISCIVORE_FOOD_PRICE = 23;
     const FILTER_FEED_FOOD_PRICE = 20;
     const CARNIVORE_FOOD_PRICE = 25;
@@ -212,5 +212,42 @@ class ZookeeperManager
         }
         $finalBalance = $zookeeper->getMoney();
         return $finalBalance;
+    }
+
+    public function getInventory(Zookeeper $zookeeper): array
+    {
+        $inventory = [];
+        $carnivoreFood = $zookeeper->getCarnivoreFood();
+        $filterFeedFood = $zookeeper->getFilterFeedFood();
+        $herbivoreFood = $zookeeper->getHerbivoreFood();
+        $piscivoreFood = $zookeeper->getPiscivoreFood();
+        $water = $zookeeper->getWater();
+        $firstAidKit = $zookeeper->getFirstAidKit();
+
+        if($carnivoreFood>0){
+            $inventory['Carnivore Food'] = $carnivoreFood;
+        }
+
+        if($filterFeedFood>0){
+            $inventory['Filter Feed Food'] = $filterFeedFood;
+        }
+
+        if($herbivoreFood>0){
+            $inventory['Herbivore Food'] = $herbivoreFood;
+        }
+
+        if($piscivoreFood>0){
+            $inventory['Piscivore Food'] = $piscivoreFood;
+        }
+
+        if($water>0){
+            $inventory['Water'] = $water;
+        }
+
+        if($firstAidKit>0){
+            $inventory['First Aid Kit'] = $firstAidKit;
+        }
+
+        return $inventory;
     }
 }

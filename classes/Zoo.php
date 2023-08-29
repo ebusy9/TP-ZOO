@@ -11,6 +11,21 @@ class Zoo
     private array $paddocks = [];
 
 
+    public function __construct(?string $name = null)
+    {
+        $this->name = $name;
+    }
+
+    public function hydrate(array $data): void
+    {
+        foreach ($data as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if(method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
+
     public function getId(): int
     {
         return $this->id;

@@ -1,6 +1,6 @@
 <?php
 
-use classes\TimeManager;
+use classes\ZooManager;
 
 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db.php';
 require_once dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'autoload.php';
@@ -12,7 +12,7 @@ if (!isset($_SESSION['idUser'])) {
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-$manager = new TimeManager($db, $_SESSION['zooId']);
+$manager = new ZooManager($db, $_SESSION['zooId']);
 $updatde = $manager->nextDay();
 
 

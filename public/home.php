@@ -36,6 +36,9 @@ try {
             <label for="name">Name:</label>
             <input type="text" name="name" required>
             <br>
+            <label for="zooName">Zoo Name:</label>
+            <input type="text" name="zooName" required>
+            <br>
             <label for="gender">Gender:</label>
             <select name="gender" required>
                 <option value="male">Male</option>
